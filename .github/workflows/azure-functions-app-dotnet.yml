@@ -47,13 +47,13 @@ jobs:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
     - name: Install dependencies
-      run: dotnet restore ./nerdotnetcore/dotnetapp/dotnetapp/dotnetapp.csproj
+      run: dotnet restore ./dotnetapp/dotnetapp/dotnetapp.csproj
 
     - name: Resolve Project Dependencies Using Dotnet
-      run: dotnet build ./nerdotnetcore/dotnetapp/dotnetapp/dotnetapp.csproj --configuration Release --no-restore
+      run: dotnet build ./dotnetapp/dotnetapp/dotnetapp.csproj --configuration Release --no-restore
       
     - name: Resolve Project Dependencies Using Dotnet
-      run: dotnet build ./nerdotnetcore/dotnetapp/dotnetapp/dotnetapp.csproj --configuration Release --output ./output
+      run: dotnet build ./dotnetapp/dotnetapp/dotnetapp.csproj --configuration Release --output ./output
           
 
     - name: 'Run Azure Functions Action'
